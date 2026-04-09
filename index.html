@@ -3,21 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection for Video Question Answering">
-  <meta name="keywords" content="Video QA, Frame Selection, Vision-Language Models">
+        content="How Should Video LLMs Output Time? An Analysis of Efficient Temporal Grounding Paradigms">
+  <meta name="keywords" content="Video Temporal Grounding, Video LLM, Temporal Output Paradigms, Efficient Deployment">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection for Video Question Answering</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+  <title>TG-Paradigms: How Should Video LLMs Output Time?</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -44,63 +33,68 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection for Video Question Answering</h1>
+          <h1 class="title is-1 publication-title">How Should Video LLMs Output Time?<br>An Analysis of Efficient Temporal Grounding Paradigms</h1>
+          
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://alexco1d.github.io/" target="_blank">Yuanhao Zou</a><sup style="color:#6fbf73;">1</sup>,
+              <a href="https://aestine.github.io/" target="_blank">Shengji Jin</a><sup>1*</sup>,
             </span>
             <span class="author-block">
-              <a href="https://aestine.github.io/" target="_blank">Shengji Jin</a><sup style="color:#ed4b82;">2</sup>,
+              <a href="https://alexco1d.github.io/" target="_blank">Yuanhao Zou</a><sup>1*</sup>,
             </span>
             <span class="author-block">
-              <a href="https://dengandong.github.io/" target="_blank">Andong Deng</a><sup style="color:#6fbf73;">1</sup>,
+              Victor Zhu<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://kennethzhao24.github.io/" target="_blank">Youpeng Zhao</a><sup style="color:#6fbf73;">1</sup>,
+              Zhengping Ji<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.cass.eecs.ucf.edu/jun-wang/" target="_blank">Jun Wang</a><sup style="color:#6fbf73;">1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.crcv.ucf.edu/chenchen/" target="_blank">Chen Chen</a><sup style="color:#6fbf73;">1</sup>
+              <a href="https://www.crcv.ucf.edu/chenchen/" target="_blank">Chen Chen</a><sup>1</sup>
             </span>
           </div>
           
           <div class="is-size-5 publication-authors">
-            <span class="author-block" style="margin-right: 15px;"><sup style="color:#6fbf73;">1</sup>University of Central Florida,</span>
-            <span class="author-block" style="margin-right: 15px;"><sup style="color:#ed4b82;">2</sup>Weill Cornell Medicine</span><br>
+            <span class="author-block"><sup>1</sup>University of Central Florida,</span>
+            <span class="author-block"><sup>2</sup>Axon</span><br>
+            <span class="author-block" style="font-size: 0.85em;">* Equal contribution</span>
+          </div>
+
+          <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+            <span class="author-block" style="font-weight: 600; color: #363636;">
+              CVPR 2025 Workshop on Efficient and On-Device Computational Vision (ECV)
+            </span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="#"
+                <a href="./static/ECV_camera_ready_2026.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper (Coming Soon)</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <!-- arXiv Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2510.04428"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv (Coming Soon)</span>
                 </a>
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/UCF-AIR/A.I.R./tree/main"
+                <a href="https://github.com/Aestine/TG-Paradigms"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code (Coming Soon)</span>
+                  <span>Code</span>
                   </a>
               </span>
             </div>
@@ -111,17 +105,18 @@
   </div>
 </section>
 
-<!-- Teaser Figure -->
+<!-- Teaser Figure: Paradigm Overview -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <figure>
-        <img src="./static/images/intro.png" alt="Challenges in Query-Related Frame Selection">
-        <figcaption class="has-text-centered">
+        <img src="./static/images/paradigm_overview.png" alt="Overview of three temporal grounding output paradigms">
+        <figcaption class="has-text-centered" style="margin-top: 10px;">
           <p class="subtitle">
-            <strong>Figure 1:</strong> Key challenges in query-related frame selection. (a) Pipeline overview with two approaches: 
-            lightweight models (CLIP) vs. VLM analysis. (b) Lightweight models fail on complex queries with ambiguous similarity. 
-            (c) VLM analysis leads to computation cost explosion.
+            <strong>Figure 1:</strong> Overview of three output formulation paradigms for temporal grounding in Video LLMs.
+            (a) <strong>Text Numeral Generation</strong> directly generates timestamps as text tokens.
+            (b) <strong>Temporal Token Generation</strong> introduces dedicated temporal tokens and a specialized head.
+            (c) <strong>Continuous Temporal Decoding</strong> maps hidden states through an MLP to predict temporal distributions.
           </p>
         </figcaption>
       </figure>
@@ -129,76 +124,206 @@
   </div>
 </section>
 
+<!-- Abstract -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Effectively applying Vision-Language Models (VLMs) to Video Question Answering (VideoQA) hinges on selecting a concise yet comprehensive set of frames,
-            as processing entire videos is computationally infeasible. However, current frame selection methods face a critical trade-off: approaches relying on lightweight 
-            similarity models, such as CLIP, often fail to capture the nuances of complex queries, resulting in inaccurate similarity scores that cannot accurately reflect 
-            the authentic query-frame relevance, which further undermines frame selection.
+            While Multimodal Large Language Models (MLLMs) have advanced Video Temporal Grounding (VTG), existing methods 
+            often couple output paradigms with different backbones, datasets, and training protocols. This makes it challenging 
+            to isolate the specific impact of the output design. Additionally, as VTG systems are increasingly considered for 
+            resource-constrained edge deployment, the trade-off between output formulation and system-level efficiency requires 
+            systematic investigation.
           </p>
           <p>
-            Meanwhile, methods that leverage a VLM for deeper analysis achieve higher accuracy but incur prohibitive computational costs. 
-            To address these limitations, we propose A.I.R, a training-free approach for Adaptive, Iterative, and Reasoning-based frame selection. 
-            We leverage a powerful VLM to perform deep, semantic analysis on complex queries, and this analysis is deployed within a cost-effective 
-            iterative loop that processes only a small batch of the most promising frames at a time.
+            In this paper, we present a controlled empirical study comparing three dominant VTG output paradigms: 
+            <strong>Text Numeral Generation</strong>, <strong>Temporal Token Generation</strong>, and <strong>Continuous Temporal Decoding</strong>. 
+            We evaluate these paradigms across identical compact VLMs (SmolVLM2, FastVLM, and Molmo2) using consistent datasets 
+            and LoRA fine-tuning protocols. Evaluations on Charades-STA, QVHighlights, and YouCook2 measure both localization 
+            accuracy and system efficiency, including inference latency, training throughput, and parameter overhead.
           </p>
           <p>
-            Extensive experiments on various VideoQA benchmarks demonstrate that our approach outperforms existing frame selection methods, 
-            significantly boosts the performance of the foundation VLM, and achieves substantial gains in computational efficiency over other VLM-based techniques.
+            Our results demonstrate that the choice of output formulation significantly affects both grounding accuracy and 
+            computational cost, independent of model scale. Specifically, the <strong>continuous distribution paradigm</strong> consistently 
+            achieves the most favorable efficiency-accuracy trade-off on the Pareto frontier, delivering robust localization 
+            with minimal latency overhead. These findings provide objective empirical guidelines for designing efficient, 
+            deployment-ready VTG systems.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
   </div>
 </section>
-  
+
+<!-- Key Contributions -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Key Contributions -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Key Contributions</h2>
         <div class="content has-text-justified">
           <ul>
-            <li><strong>Adaptive Initial Sampling:</strong> We introduce a method that moves beyond uniform sampling by dynamically
-            identifying and sampling candidate frames around potential events based on query-frame similarity
-            and controls the output frames via an adaptive budget, robustly handling videos of varied length.</li>
+            <li><strong>Unified Fine-Tuning Comparison:</strong> We implement three representative VTG output paradigms 
+            (TRACE-style generative, DisTime-style continuous, VTimeLLM-style text numeral) on the same compact backbones 
+            with identical training configurations, isolating the output formulation as the sole experimental variable.</li>
             
-            <li><strong>Iterative Frame Selection:</strong> We propose a novel algorithm that makes deep VLM analysis computationally 
-            tractable, distinguishing itself from prior methods that rely on a computationally expensive, single-pass analysis over large, fixed frame sets.</li>
+            <li><strong>Efficiency-Aware Analysis:</strong> Beyond localization accuracy, we analyze parameter overhead, 
+            training stability, inference determinism, and computational cost &mdash; dimensions critical for practical deployment 
+            yet underexplored in the VTG-MLLM literature.</li>
             
-            <li><strong>Extensive Experiments:</strong> Our plug-and-play method consistently improves diverse foundation VLMs 
-            across all benchmarks, with gains of <strong>+2.6 to +4.2%</strong> on Video-MME, <strong>+6.1 to +8.2%</strong> on MLVU, 
-            and <strong>+0.3 to +7.0%</strong> on NextQA, while reducing VLM analysis time by <strong>74%</strong> compared to conventional methods.</li>
+            <li><strong>Paradigm Dividend:</strong> We discover that optimizing the output formulation provides an orthogonal, 
+            highly effective path to superior performance. A <strong>1.5B continuous model outperforms 7B-class baselines</strong> 
+            using alternative paradigms, demonstrating that output design matters more than brute-force parameter scaling.</li>
           </ul>
         </div>
       </div>
     </div>
-    <!--/ Key Contributions -->
   </div>
 </section>
 
+<!-- Main Results Table -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Method Overview Figure 2 -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Method Overview</h2>
+        <h2 class="title is-3">Main Results</h2>
+        
+        <div class="content has-text-justified">
+          <p>
+            Under strictly controlled settings, the <strong>Continuous Temporal Decoding</strong> paradigm consistently achieves 
+            the best localization accuracy across all tasks and backbone scales. At Molmo2-8B, it reaches 57.1% mIoU on 
+            Charades-STA and 72.6% R1@0.5 on QVHighlights, while the Text Numeral baseline plateaus at 27.5% mIoU 
+            at the same scale.
+          </p>
+        </div>
+
+        <div style="overflow-x: auto;">
+        <table class="table is-bordered is-striped is-narrow is-hoverable" style="margin: auto; font-size: 0.9em;">
+          <caption style="caption-side: top; padding-bottom: 0.5em;">
+            <strong>Quantitative comparison on Charades-STA and QVHighlights (Moment Retrieval)</strong>
+          </caption>
+          <thead>
+            <tr style="background-color: #f5f5f5;">
+              <th>Backbone</th>
+              <th>Paradigm</th>
+              <th>R1@0.5</th>
+              <th>R1@0.7</th>
+              <th>mIoU</th>
+              <th>R1@0.5</th>
+              <th>R1@0.7</th>
+              <th>mIoU</th>
+            </tr>
+            <tr style="background-color: #f5f5f5;">
+              <th colspan="2"></th>
+              <th colspan="3" style="text-align:center;">Charades-STA</th>
+              <th colspan="3" style="text-align:center;">QVHighlights</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- SmolVLM2-0.5B -->
+            <tr>
+              <td rowspan="3">SmolVLM2-0.5B</td>
+              <td>Text</td>
+              <td>15.1</td><td>6.8</td><td>16.2</td>
+              <td>9.0</td><td>5.6</td><td>12.9</td>
+            </tr>
+            <tr style="background-color: #e8f5e9;">
+              <td><strong>Cont.</strong></td>
+              <td><strong>41.8</strong></td><td><strong>22.5</strong></td><td><strong>43.4</strong></td>
+              <td><strong>46.9</strong></td><td><strong>31.0</strong></td><td><strong>50.4</strong></td>
+            </tr>
+            <tr>
+              <td>Gen.</td>
+              <td>20.1</td><td>9.5</td><td>21.9</td>
+              <td>14.7</td><td>9.6</td><td>18.6</td>
+            </tr>
+
+            <!-- FastVLM-1.5B -->
+            <tr>
+              <td rowspan="3">FastVLM-1.5B</td>
+              <td>Text</td>
+              <td>19.5</td><td>8.9</td><td>19.9</td>
+              <td>11.7</td><td>7.6</td><td>16.5</td>
+            </tr>
+            <tr style="background-color: #e8f5e9;">
+              <td><strong>Cont.</strong></td>
+              <td><strong>51.3</strong></td><td><strong>25.1</strong></td><td><strong>46.6</strong></td>
+              <td><strong>60.9</strong></td><td><strong>35.5</strong></td><td><strong>54.6</strong></td>
+            </tr>
+            <tr>
+              <td>Gen.</td>
+              <td>26.2</td><td>12.3</td><td>28.9</td>
+              <td>18.4</td><td>12.3</td><td>24.0</td>
+            </tr>
+
+            <!-- Molmo2-4B -->
+            <tr>
+              <td rowspan="3">Molmo2-4B</td>
+              <td>Text</td>
+              <td>22.3</td><td>10.0</td><td>23.9</td>
+              <td>13.3</td><td>8.3</td><td>19.0</td>
+            </tr>
+            <tr style="background-color: #e8f5e9;">
+              <td><strong>Cont.</strong></td>
+              <td><strong>65.8</strong></td><td><strong>37.6</strong></td><td><strong>56.3</strong></td>
+              <td><strong>69.1</strong></td><td><strong>42.8</strong></td><td><strong>59.6</strong></td>
+            </tr>
+            <tr>
+              <td>Gen.</td>
+              <td>33.7</td><td>16.0</td><td>32.3</td>
+              <td>21.7</td><td>14.1</td><td>27.5</td>
+            </tr>
+
+            <!-- Molmo2-8B -->
+            <tr>
+              <td rowspan="3">Molmo2-8B</td>
+              <td>Text</td>
+              <td>25.6</td><td>11.5</td><td>27.5</td>
+              <td>15.3</td><td>9.5</td><td>21.8</td>
+            </tr>
+            <tr style="background-color: #e8f5e9;">
+              <td><strong>Cont.</strong></td>
+              <td><strong>66.8</strong></td><td><strong>39.3</strong></td><td><strong>57.1</strong></td>
+              <td><strong>72.6</strong></td><td><strong>46.1</strong></td><td><strong>61.2</strong></td>
+            </tr>
+            <tr>
+              <td>Gen.</td>
+              <td>37.1</td><td>19.1</td><td>35.1</td>
+              <td>24.9</td><td>16.2</td><td>31.5</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scaling & Pareto -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Paradigm Dividend &amp; Efficiency-Accuracy Trade-off</h2>
+        
+        <div class="content has-text-justified">
+          <p>
+            <strong>Left:</strong> The paradigm gap remains structurally persistent from 0.5B to 8B. The Continuous model at just 
+            0.5B (mIoU 43.4%) outperforms the Text paradigm scaled to 8B (mIoU 27.5%), demonstrating a strong "paradigm dividend."
+            <strong>Right:</strong> The Continuous paradigm dominates the Pareto frontier, achieving the best trade-off between 
+            inference latency and localization accuracy through non-autoregressive decoding.
+          </p>
+        </div>
+
         <figure class="image">
-          <img src="./static/images/arch.png" alt="A.I.R. Pipeline">
-          <figcaption class="has-text-centered">
+          <img src="./static/images/scaling_pareto.png" alt="Scaling curves and Pareto frontier" style="max-width: 90%; margin: auto;">
+          <figcaption class="has-text-centered" style="margin-top: 10px;">
             <p class="subtitle">
-              <strong>Figure 2:</strong> General pipeline of A.I.R. with two stages: (1) Adaptive Initial Sampling that identifies
-              potential 'events' based on query similarity and dynamically samples frames around them using an
-              adaptive budget; and (2) Iterative Frame Selection that progressively refine the frame selection via
-              four steps. The selected frames are then fed into Answering VLM.
+              <strong>Figure 3:</strong> (a) mIoU vs. backbone size for each paradigm. (b) Efficiency-accuracy Pareto frontier 
+              across all paradigm-backbone combinations. Both evaluated on Charades-STA.
             </p>
           </figcaption>
         </figure>
@@ -206,287 +331,60 @@
     </div>
   </div>
 </section>
-    <!--/ Method Overview Figure 2 -->
 
-    <!-- Detailed Method Figure 3 -->
+<!-- Qualitative -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Method Details</h2>
+        <h2 class="title is-3">Qualitative Analysis</h2>
+
         <figure class="image">
-          <img src="./static/images/detail_pipeline.png" alt="A.I.R. Detailed Stages">
-          <figcaption class="has-text-centered">
+          <img src="./static/images/qualitative.png" alt="Qualitative comparison across paradigms" style="max-width: 100%; margin: auto;">
+          <figcaption class="has-text-centered" style="margin-top: 10px;">
             <p class="subtitle">
-              <strong>Figure 3:</strong> Two main stages in our A.I.R. (a) <strong>Adaptive Initial Sampling:</strong> A GMM-based adaptive
-              threshold is applied to the query-frame similarity to identify potential events, and then event-wise
-              sampling is conducted on the refined events to obtain K frames. (b) <strong>Iterative Frame Selection:</strong> 
-              In each iteration, 1) Promising candidates are selected via Interval Potential Ranking; 2)
-              A VLM performs reasoning-based analysis to validate the best frames; 3) An Early-Stop mechanism
-              checks if the frame budget is met; And 4) if not met, the Localized Density Sampling discovers more
-              frames around the validated frames and feed them into the next iteration.
+              <strong>Figure 2:</strong> Qualitative comparison on Charades-STA (SmolVLM2-2.2B) across three difficulty levels.
+              (a) Simple action: all paradigms succeed. (b) Temporally ambiguous query: only Continuous aligns precisely (IoU 0.99).
+              (c) Compound action requiring causal reasoning: all paradigms fail.
             </p>
           </figcaption>
         </figure>
       </div>
     </div>
-    <!--/ Detailed Method Figure 3 -->
   </div>
 </section>
 
-<!-- Experimental Results Section -->
+<!-- Ablation -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Experimental Results</h2>
+        <h2 class="title is-3">Ablation Studies</h2>
         
-        <!-- Performance Results -->
-        <div class="content has-text-justified">
-          <h3 class="title is-4 has-text-centered">Performance Comparison</h3>
-          <p>
-            We evaluate A.I.R. across five challenging VideoQA benchmarks with three state-of-the-art foundation VLMs. 
-            Our method demonstrates consistent improvements across all model-benchmark combinations, validating its 
-            effectiveness as a plug-and-play solution. The performance gains are particularly pronounced on benchmarks 
-            requiring complex temporal reasoning (MLVU, NextQA), where our semantic-aware frame selection significantly 
-            outperforms uniform sampling baselines.
-          </p>
-        </div>
-        
-        <!-- Performance Results table -->
-        <table class="table is-bordered is-striped is-narrow is-hoverable" style="margin: auto;">
-          <caption style="caption-side: top; padding-bottom: 0.5em;">
-            <strong>Performance comparison across VideoQA benchmarks</strong>
-          </caption>
-          <thead>
-            <tr style="background-color: #f5f5f5;">
-              <th>Model</th>
-              <th>#Frames</th>
-              <th>Video-MME<br>(w/o sub)</th>
-              <th>MLVU<sub>dev</sub></th>
-              <th>LVB<sub>val</sub></th>
-              <th>EgoSchema</th>
-              <th>NextQA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>QwenVL-2.5</td>
-              <td>32</td>
-              <td>60.8</td>
-              <td>59.3</td>
-              <td>58.1</td>
-              <td>57.6</td>
-              <td>74.3</td>
-            </tr>
-            <tr style="background-color: #e8f5e9;">
-              <td><strong>+A.I.R. (Ours)</strong></td>
-              <td>≤32</td>
-              <td><strong>65.0</strong></td>
-              <td><strong>67.5</strong></td>
-              <td><strong>61.4</strong></td>
-              <td><strong>58.8</strong></td>
-              <td><strong>81.3</strong></td>
-            </tr>
-            <tr>
-              <td>InternVL-3</td>
-              <td>32</td>
-              <td>65.6</td>
-              <td>68.4</td>
-              <td>58.3</td>
-              <td>62.5</td>
-              <td>82.3</td>
-            </tr>
-            <tr style="background-color: #e8f5e9;">
-              <td><strong>+A.I.R. (Ours)</strong></td>
-              <td>≤32</td>
-              <td><strong>68.2</strong></td>
-              <td><strong>74.5</strong></td>
-              <td><strong>62.8</strong></td>
-              <td><strong>63.3</strong></td>
-              <td><strong>82.6</strong></td>
-            </tr>
-            <tr>
-              <td>LLaVA-OneVision</td>
-              <td>32</td>
-              <td>58.5</td>
-              <td>62.4</td>
-              <td>56.6</td>
-              <td>60.2</td>
-              <td>79.3</td>
-            </tr>
-            <tr style="background-color: #e8f5e9;">
-              <td><strong>+A.I.R. (Ours)</strong></td>
-              <td>≤32</td>
-              <td><strong>61.4</strong></td>
-              <td><strong>69.3</strong></td>
-              <td><strong>60.7</strong></td>
-              <td><strong>61.4</strong></td>
-              <td><strong>81.6</strong></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <br><br>
-        
-        <!-- Efficiency Analysis -->
-        <div class="content has-text-justified">
-          <h3 class="title is-4 has-text-centered">Efficiency Analysis</h3>
-          <p>
-            Beyond accuracy improvements, A.I.R. achieves remarkable computational efficiency through its iterative 
-            refinement strategy. The table below breaks down the time costs for different components and compares 
-            VLM analysis time between conventional direct analysis and our method. Our Early-Stop mechanism ensures 
-            that we analyze only the necessary frames, reducing the actual analyzed frames from the theoretical maximum 
-            to achieve <strong>50-74%</strong> time savings while maintaining superior accuracy.
-          </p>
-        </div>
-        
-        <!-- Efficiency Table -->
-        <table class="table is-bordered is-striped is-narrow is-hoverable" style="margin: auto;">
-          <caption style="caption-side: top; padding-bottom: 0.5em;">
-            <strong>Efficiency comparison on Video-MME (InternVL-3-8B)</strong>
-          </caption>
-          <thead>
-            <tr style="background-color: #f5f5f5;">
-              <th>Method</th>
-              <th>#Analyzed</th>
-              <th>Time(s)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colspan="3" style="background-color: #efefef; font-style: italic;">Component Time Cost</td>
-            </tr>
-            <tr>
-              <td>Baseline (Uniform 32)</td>
-              <td>-</td>
-              <td>0.87</td>
-            </tr>
-            <tr style="background-color: #e8f5e9;">
-              <td><strong>A.I.R.</strong> (QA Stage)</td>
-              <td>-</td>
-              <td><strong>0.81</strong></td>
-            </tr>
-            <tr style="background-color: #e8f5e9;">
-              <td><strong>A.I.R.</strong> (Initial Sampling)</td>
-              <td>-</td>
-              <td><strong>0.03</strong></td>
-            </tr>
-            <tr style="background-color: #e8f5e9;">
-              <td><strong>A.I.R.</strong> (Frame Selection)</td>
-              <td>-</td>
-              <td><strong>0.18</strong></td>
-            </tr>
-            
-            <tr>
-              <td colspan="3" style="background-color: #efefef; font-style: italic;">VLM Analysis Time</td>
-            </tr>
-            <tr>
-              <td>Direct VLM (128f)</td>
-              <td>128</td>
-              <td>162.03</td>
-            </tr>
-            <tr style="background-color: #e8f5e9;">
-              <td><strong>A.I.R.</strong> (max=72)</td>
-              <td><strong>36.5</strong></td>
-              <td><strong>42.31</strong></td>
-            </tr>
-            
-            <tr>
-              <td>Direct VLM (32f)</td>
-              <td>32</td>
-              <td>42.47</td>
-            </tr>
-            <tr style="background-color: #e8f5e9;">
-              <td><strong>A.I.R.</strong> (max=32)</td>
-              <td><strong>20.3</strong></td>
-              <td><strong>21.92</strong></td>
-            </tr>
-            
-            <tr>
-              <td>Direct VLM (16f)</td>
-              <td>16</td>
-              <td>20.39</td>
-            </tr>
-            <tr style="background-color: #e8f5e9;">
-              <td><strong>A.I.R.</strong> (max=16)</td>
-              <td><strong>14.1</strong></td>
-              <td><strong>14.61</strong></td>
-            </tr>
-          </tbody>
-        </table>
-        
+        <figure class="image">
+          <img src="./static/images/ablation.png" alt="Ablation studies" style="max-width: 90%; margin: auto;">
+          <figcaption class="has-text-centered" style="margin-top: 10px;">
+            <p class="subtitle">
+              <strong>Figure 4:</strong> (a) Context length robustness with varying sampled frames (8 to 64). The Text paradigm 
+              saturates early while Continuous scales steeply. (b) Data efficiency: Continuous trained on 25% data outperforms 
+              Text and Generative trained on 100%.
+            </p>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
-<!--/ Experimental Results Section -->
 
-<!-- Visualization and Qualitative Comparison Section -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Visualization and Qualitative Analysis</h2>
-        
-        <!-- GIF Visualization -->
-        <div class="content">
-          <h3 class="title is-4">Frame Selection Process</h3>
-          <figure class="image">
-            <img src="./static/images/gif.gif" alt="A.I.R. Frame Selection Process">
-            
-          </figure>
-        </div>
-        
-        <!-- Qualitative Comparison -->
-        <div class="content" style="margin-top: 2em;">
-          <h3 class="title is-4">Qualitative Comparison</h3>
-          <p class="has-text-justified">
-            Visual comparison of frame selection results between Uniform Sampling, CLIP (Top-K), and our A.I.R. method on two example questions from different videos:
-          </p>
-        </div>
-        
-        <!-- Two comparison images side by side -->
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/q1.png" alt="Comparison Example 1">
-              <figcaption class="has-text-centered">
-                <p><strong>Example 1:</strong> Nahuku formation question</p>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/q2.png" alt="Comparison Example 2">
-              <figcaption class="has-text-centered">
-                <p><strong>Example 2:</strong> Daily activities question</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-        
-        <div class="content has-text-justified">
-          <p>
-            As shown above, A.I.R. demonstrates superior frame selection by focusing on semantically relevant frames. 
-            While Uniform Sampling includes many redundant frames and CLIP (Top-K) often selects visually similar but contextually irrelevant frames, 
-            our method precisely identifies the key moments needed to answer the questions correctly.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--/ Visualization and Qualitative Comparison Section -->
-
+<!-- BibTeX -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{zou2026air,
-  author    = {Zou, Yuanhao and Jin, Shengji and Deng, Andong and Zhao, Youpeng and Wang, Jun and Chen, Chen},
-  title     = {A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection for Video Question Answering},
-  journal   = {Under review at ICLR},
-  year      = {2026},
+    <pre><code>@inproceedings{jin2025tgparadigms,
+  author    = {Jin, Shengji and Zou, Yuanhao and Zhu, Victor and Ji, Zhengping and Chen, Chen},
+  title     = {How Should Video LLMs Output Time? An Analysis of Efficient Temporal Grounding Paradigms},
+  booktitle = {CVPR 2025 Workshop on Efficient and On-Device Computational Vision (ECV)},
+  year      = {2025},
 }</code></pre>
   </div>
 </section>
@@ -497,7 +395,8 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This page was built using the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            This page was built using the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page template 
+            and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
         </div>
       </div>
@@ -507,6 +406,3 @@
 
 </body>
 </html>
-
-
-
